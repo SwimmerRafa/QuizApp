@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+<head>
+<title>style.css</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<link href='../../../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+<script type='text/javascript'>
+  function popupCode(url) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+  
+  function toggleCode(id) {
+    var code = document.getElementById(id)
+  
+    code.style.display = code.style.display != 'block' ? 'block' : 'none'
+    return true
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+</script>
+</head>
+<body class='page'>
+<div class='file' id='wrapper'>
+<div class='header'>
+<h1 class='name'>style.css
+</h1>
+<div class='paths'>
+src/public/css/style.css
+</div>
+<div class='last-update'>
+Last Update:
+<span class='datetime'>2020-06-09 21:19:58 +0000</span>
+</div>
+</div>
+<div id='content'>
+<div id='text'>
+<div id='description'>
+<p>.resize-logo {</p>
+
+<pre>min-height: 50px !important;</pre>
+
+<p>}</p>
+
+<p>.top-space {</p>
+
+<pre>margin-top: 2em</pre>
+
+<p>}</p>
+
+<p>.negative-margin-top {</p>
+
+<pre>margin-top: -12em;</pre>
+
+<p>}</p>
+
+<p>.is-centered {</p>
+
+<pre>display: flex;&#x000A;justify-content: center;</pre>
+
+<p>}</p>
+
+<p>.is-flex-column {</p>
+
+<pre>flex-direction: column;</pre>
+
+<p>}</p>
+
+<p>.is-login-field {</p>
+
+<pre>font-size: 12pt;&#x000A;margin: 0 0 1em 0;</pre>
+
+<p>}</p>
+
+<p>.margin-horizontal {</p>
+
+<pre>margin: 1em 0;</pre>
+
+<p>}</p>
+
+<p>.margin-bottom {</p>
+
+<pre>margin-bottom: 0.3em !important;</pre>
+
+<p>}</p>
+
+<p>.question-margin {</p>
+
+<pre>margin: 0.3em !important;</pre>
+
+<p>}</p>
+
+<p>.is-xlarge {</p>
+
+<pre>min-height: calc(78vh - 3.25rem);</pre>
+
+<p>}</p>
+
+<p>.has-shadow {</p>
+
+<pre>box-shadow: 0 -2px 0 0 #f5f5f5;</pre>
+
+<p>}</p>
+
+<p>.is-white {</p>
+
+<pre>background-color: white;</pre>
+
+<p>}</p>
+
+<p>.question-width {</p>
+
+<pre>width: 35em;</pre>
+
+<p>}</p>
+
+<p>.footer {</p>
+
+<pre>padding: 3rem 1.5rem 3rem;</pre>
+
+<p>}</p>
+
+<p>.tile-width {</p>
+
+<pre>width: 80%;</pre>
+
+<p>}</p>
+
+<p>.is-bold {</p>
+
+<pre>font-weight: bold;</pre>
+
+<p>}</p>
+
+<p>.is-hidden {</p>
+
+<pre>display: none;</pre>
+
+<p>}</p>
+
+<pre class="ruby"><span class="ruby-constant">Responsive</span> <span class="ruby-identifier">quiz</span> <span class="ruby-identifier">cards</span></pre>
+
+<p>@media screen and (min-width: 992px) {</p>
+
+<pre>.quiz-card {&#x000A;    width: 800px;&#x000A;}</pre>
+
+<p>}</p>
+
+<p>@media screen and (min-width: 1200px) {</p>
+
+<pre>.quiz-card {&#x000A;    width: 800px;&#x000A;}</pre>
+
+<p>}</p>
+
+<pre class="ruby"><span class="ruby-constant">Check</span> <span class="ruby-identifier">box</span> <span class="ruby-identifier">code</span> <span class="ruby-identifier">taken</span> <span class="ruby-identifier">of</span> <span class="ruby-constant">W3School</span></pre>
+
+<p>/* Container */ .input-container {</p>
+
+<pre>display: block;&#x000A;position: relative;&#x000A;padding-left: 35px;&#x000A;margin-bottom: 12px;&#x000A;cursor: pointer;&#x000A;font-size: 22px;&#x000A;-webkit-user-select: none;&#x000A;-moz-user-select: none;&#x000A;-ms-user-select: none;&#x000A;user-select: none;</pre>
+
+<p>}</p>
+
+<p>/* Hide the browser&#39;s default radio button */ .input-container input {</p>
+
+<pre>position: absolute;&#x000A;opacity: 0;&#x000A;cursor: pointer;</pre>
+
+<p>}</p>
+
+<p>/* Create a custom radio button */ .checkmark {</p>
+
+<pre>position: absolute;&#x000A;top: 0;&#x000A;left: 0;&#x000A;height: 27px;&#x000A;width: 27px;&#x000A;background-color: #eee;&#x000A;border-radius: 50%;&#x000A;margin-top: 3px;</pre>
+
+<p>}</p>
+
+<p>/* On mouse-over, add a grey background color */ .input-container:hover input ~ .checkmark {</p>
+
+<pre>background-color: #ccc;</pre>
+
+<p>}</p>
+
+<p>/* When the radio button is checked, add a blue background */ .input-container input:checked ~ .checkmark {</p>
+
+<pre>background-color: hsl(48, 100%, 67%);</pre>
+
+<p>}</p>
+
+<p>/* Create the indicator (the dot/circle - hidden when not checked) */ .checkmark:after {</p>
+
+<pre>content: &quot;&quot;;&#x000A;position: absolute;&#x000A;display: none;</pre>
+
+<p>}</p>
+
+<p>/* Show the indicator (dot/circle) when checked */ .input-container input:checked ~ .checkmark:after {</p>
+
+<pre>display: block;</pre>
+
+<p>}</p>
+</div>
+<div id='context'>
+</div>
+
+</div>
+</div>
+
+<div id='footer-push'></div>
+</div>
+<div id='footer'>
+<a href="https://github.com/rdoc/hanna-nouveau"><strong>Hanna Nouveau</strong> RDoc template</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<div class="tile is-ancestor is-centered">
+  <div class="tile is-4 is-vertical is-parent">
+    <div class="tile is-child box is-centered is-flex-column">
+      <p class="title is-4 has-text-centered">Log in</p>
+
+      <form action="/question" method="post">
+        <div class="is-login-field">
+          <label for="user" class="has-text-centered">User</label>
+          <input id="user" name="user" class="input" type="text" autocomplete="false"/>
+        </div>
+
+        <div class="is-login-field">
+          <label for="pass" class="has-text-centered">Password</label>
+          <input id="pass" name="pass" class="input" type="password" autocomplete="false"/>
+        </div>
+
+        <div class="margin-horizontal">
+          <button class="button is-info is-fullwidth" type="submit">Enter</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

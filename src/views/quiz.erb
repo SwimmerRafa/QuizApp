@@ -1,0 +1,38 @@
+<div class="is-centered">
+  <div class="tile is-vertical is-parent quiz-card">
+    <form action="/get-feedback" method="post">
+
+      <% @questions.each_with_index do |question, idx| %>
+
+        <div class="tile is-child notification is-info ">
+          <p class="title margin-bottom is-3">Question <%= idx += 1 %></p>
+          <p class="subtitle question-margin"><%= question.question %></p>
+          <div class="margin-horizontal">
+            <p class="title is-3">Answer</p>
+
+            <% question.options.each_with_index do |option, opt_idx| %>
+
+              <div class="control">
+                <label class="input-container"><%= option %>
+                  <input type="radio" name="<%= idx %>" value="<%= opt_idx %>" required>
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+
+            <% end %>
+
+          </div>
+        </div>
+        <br>
+
+      <% end %>
+
+      <button class="button is-warning is-bold is-fullwidth">
+        Send quiz
+      </button>
+    </form>
+
+  </div>
+</div>
+
+

@@ -1,0 +1,37 @@
+= General overview
+This is a web app to manage and take quizzes and it's written in ruby code.
+
+Inside the app you can upload a csv files to fill the pool of questions, but this file need to be formatted in the same way as the file named +sample_40_questions.csv+ that appears at the root of this {repository.}[https://github.com/FelipeOsornio/QuizApp]
+
+Once you have uploaded the questions you can generate a new quiz, submitting a nickname and the number of questions that you want.
+
+== Authors
+
+* *A01377154* <em>Felipe Osornio</em>
+* *A01378838* <em>Eric Gómez</em>
+* *A01378916* <em>Rafael Moreno Cañas</em>
+
+== Installing and Running the Application
+To run the web application, download this repository and then inside the +src+ folder type the following instruction at the command line:
+   $ ruby app_router.rb
+
+== 4+1 architectural view model
+=== Logical view
+rdoc-image:img/logical-view.png
+=== Process view
+rdoc-image:img/process-view.png
+=== Development view
+rdoc-image:img/development-view.png
+=== Physical view
+rdoc-image:img/physical-view.png
+=== Scenarios (Use case view)
+rdoc-image:img/scenarios.png
+
+== Patterns used
+* *Model-View-Controller* : The application follows the classical web implementation of the MVC architectural pattern. The models (+.rb+ files) and views (+.erb+ files) are stored in the corresponding models and views directory. The controllers are the (+.rb+ files) inside of controllers directory and the +app_router.rb+
+* *Adapter* : The model +game.rb+ is an adapter to use the +player.rb+ and +quiz.rb+ inside the controller +quiz_app.rb+.
+* *Domain-Specific* *Language* : The +app_router.rb+ file consists of a series of Sinatra routes. Sinatra is a DSL for creating web applications in Ruby.
+* *Command* : The controllers +quiz_app.rb+ and +manger_app.rb+ contain the concrete commands to each route declared in the +app_router.rb+ , so in this way all the web routes invoke the corresponding command to do a concrete action.
+
+== References
+- \R. Olsen. <em>Design Patterns in Ruby.</em> Addison-Wesley, 2007.

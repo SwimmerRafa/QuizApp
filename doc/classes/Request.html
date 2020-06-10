@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+<head>
+<title>Request</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<link href='../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+<script type='text/javascript'>
+  function popupCode(url) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+  
+  function toggleCode(id) {
+    var code = document.getElementById(id)
+  
+    code.style.display = code.style.display != 'block' ? 'block' : 'none'
+    return true
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+</script>
+</head>
+<body class='page'>
+<div class='class' id='wrapper'>
+<div class='header'>
+<h1 class='name'><span class='type'>class</span>
+Request
+</h1>
+<ol class='paths'>
+<li>
+<a href="../files/src/models/request_rb.html">src/models/request.rb</a>
+</li>
+</ol>
+<div class='parent'>
+Superclass:
+<strong><a href="Object.html">Object</a></strong>
+</div>
+</div>
+<div id='content'>
+<div id='text'>
+<div id='description'>
+<p>Class that models the requests to a certain url</p>
+</div>
+<div id='method-list'>
+<h2>Methods</h2>
+<h3>Public Class</h3>
+<ol>
+<li><a href="#method-c-delete_request">delete_request</a></li>
+<li><a href="#method-c-get_request">get_request</a></li>
+<li><a href="#method-c-manage_response">manage_response</a></li>
+<li><a href="#method-c-post_request">post_request</a></li>
+</ol>
+</div>
+<div id='context'>
+</div>
+<div id='section'>
+<div id='methods'>
+<h2>Public Class methods</h2>
+<div class='method public-class' id='method-method-c-delete_request'>
+<a name='method-c-delete_request'></a>
+<div class='synopsis'>
+<span class='name'>delete_request</span>
+<span class='arguments'>(route)</span>
+
+</div>
+<div class='description'>
+
+<p>Function that represents the HTTP DELETE</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-c-delete_request-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-c-delete_request-source'><span class="ruby-comment"># File src/models/request.rb, line 21</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">delete_request</span>(<span class="ruby-identifier">route</span>)&#x000A;  <span class="ruby-constant">Faraday</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">route</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-class' id='method-method-c-get_request'>
+<a name='method-c-get_request'></a>
+<div class='synopsis'>
+<span class='name'>get_request</span>
+<span class='arguments'>(route)</span>
+
+</div>
+<div class='description'>
+
+<p>Function that represents the HTTP GET</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-c-get_request-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-c-get_request-source'><span class="ruby-comment"># File src/models/request.rb, line 7</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">get_request</span>(<span class="ruby-identifier">route</span>)&#x000A;  <span class="ruby-constant">Faraday</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">route</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-class' id='method-method-c-manage_response'>
+<a name='method-c-manage_response'></a>
+<div class='synopsis'>
+<span class='name'>manage_response</span>
+<span class='arguments'>(response)</span>
+
+</div>
+<div class='description'>
+
+<p>Function that parse the HTTP response into a hash object</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-c-manage_response-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-c-manage_response-source'><span class="ruby-comment"># File src/models/request.rb, line 26</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">manage_response</span>(<span class="ruby-identifier">response</span>)&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">success?</span>&#x000A;    <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span>)&#x000A;  <span class="ruby-keyword">else</span>&#x000A;    {<span class="ruby-value">status:</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">status</span>, <span class="ruby-value">message:</span> <span class="ruby-string">&#39;failed&#39;</span>}&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-class' id='method-method-c-post_request'>
+<a name='method-c-post_request'></a>
+<div class='synopsis'>
+<span class='name'>post_request</span>
+<span class='arguments'>(route, body)</span>
+
+</div>
+<div class='description'>
+
+<p>Function that represents the HTTP POST</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-c-post_request-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-c-post_request-source'><span class="ruby-comment"># File src/models/request.rb, line 12</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">post_request</span>(<span class="ruby-identifier">route</span>, <span class="ruby-identifier">body</span>)&#x000A;  <span class="ruby-identifier">response</span> = <span class="ruby-constant">Faraday</span>.<span class="ruby-identifier">post</span>(<span class="ruby-identifier">route</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">request</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-identifier">request</span>.<span class="ruby-identifier">body</span> = <span class="ruby-identifier">body</span>.<span class="ruby-identifier">to_json</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;&#x000A;  <span class="ruby-identifier">response</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div id='footer-push'></div>
+</div>
+<div id='footer'>
+<a href="https://github.com/rdoc/hanna-nouveau"><strong>Hanna Nouveau</strong> RDoc template</a>
+</div>
+</body>
+</html>

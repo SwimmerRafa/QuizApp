@@ -1,0 +1,32 @@
+<div class="is-centered">
+  <div class="tile is-vertical is-parent quiz-card">
+    <form method="post" action="/scores">
+      <p class="title is-3">Grade: <%= @feedback %></p>
+
+      <% @questions.each_with_index do |question, idx| %>
+
+        <div class="tile is-child notification is-info ">
+          <p class="title margin-bottom is-3">Question <%= idx + 1 %></p>
+          <p class="subtitle question-margin"><%= question.question %></p>
+          <div class="margin-horizontal">
+            <p class="title margin-bottom is-3">Your answer</p>
+            <p class="subtitle question-margin"><%= question.options[@user_answer[idx].to_i] %></p>
+          </div>
+          <div class="margin-horizontal">
+            <p class="title margin-bottom is-3">Correct answer</p>
+            <p class="subtitle question-margin"><%= question.options[question.answer] %></p>
+          </div>
+        </div>
+        <br>
+
+      <% end %>
+
+      <label class="is-hidden" for="grade"></label>
+      <input class="is-hidden" id="grade" name="grade" type="number" value="<%= @feedback %>"/>
+      <button class="button is-warning is-bold is-fullwidth">
+        Continue
+      </button>
+    </form>
+
+  </div>
+</div>

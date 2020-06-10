@@ -1,0 +1,23 @@
+<div class="is-flex-column">
+  <form action="/quiz" method="post">
+
+    <div class="has-text-centered">
+      <label class="is-bold" for="username">Username</label>
+      <input class="input margin-horizontal" type="text" name="username" id="username" autocomplete="false" required/>
+    </div>
+
+    <div class="has-text-centered">
+      <label class="is-bold has-text-centered" for="question_number">Select number of questions</label>
+    </div>
+
+    <div class="select margin-horizontal is-fullwidth">
+      <select name="question_number" id="question_number" required>
+        <% (0..9).each do |idx| %>
+          <option value="<%= idx + 1 %>"><%= idx += 1 %></option>
+        <% end %>
+      </select>
+    </div>
+
+    <button class="button is-info is-fullwidth margin-horizontal" type="submit">Start</button>
+  </form>
+</div>

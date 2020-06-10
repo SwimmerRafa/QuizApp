@@ -1,0 +1,36 @@
+<div class="is-centered">
+  <div class="tile is-vertical is-parent quiz-card">
+
+    <p class="subtitle is-bold">Your score</p>
+    <div class="tile is-child notification is-primary">
+      <nav class="level">
+        <div class="level-left">
+          <p class="level-item is-bold"><%= @username %></p>
+        </div>
+        <div class="level-right">
+          <p class="level-item is-bold"><%= @score %></p>
+        </div>
+      </nav>
+    </div>
+
+    <p class="subtitle is-bold">Best scores</p>
+    <div class="tile is-child notification is-info">
+
+      <% @scores.each do |score| %>
+
+        <nav class="level">
+          <div class="level-left">
+            <p class="level-item is-bold"><%= score['username'] %></p>
+          </div>
+          <div class="level-right">
+            <p class="level-item is-bold"><%= score['score'] %></p>
+          </div>
+        </nav>
+
+      <% end %>
+
+    </div>
+
+    <a class="button is-bold is-warning" href="/start-quiz">Restart</a>
+  </div>
+</div>

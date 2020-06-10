@@ -1,0 +1,36 @@
+<form action="/upload-csv" method="post" enctype="multipart/form-data">
+  <div class="field">
+    <div id="file-js-example" class="file is-centered is-boxed is-info has-name">
+      <label for="csv-file" class="file-label">
+        <input id="csv-file" name="csv-file" class="file-input" type="file" accept=".csv">
+        <span class="file-cta">
+            <span class="file-icon">
+              <i class="fas fa-upload"></i>
+            </span>
+            <span class="file-label">
+              Upload csv file...
+            </span>
+          </span>
+        <span class="file-name has-text-centered">
+            No file uploaded
+          </span>
+      </label>
+    </div>
+  </div>
+  <button class="button is-info is-fullwidth" type="submit">Load</button>
+</form>
+
+<script>
+    const fileInput = document.querySelector('#file-js-example input[type=file]')
+
+    fileInput.onchange = () => {
+
+        if (fileInput.files.length > 0) {
+
+            const fileName = document.querySelector('#file-js-example .file-name')
+            fileName.textContent = fileInput.files[0].name
+
+        }
+
+    }
+</script>

@@ -1,0 +1,41 @@
+<div>
+  <table class="table is-fullwidth">
+    <thead>
+    <tr>
+      <th>Question</th>
+      <th>Option A</th>
+      <th>Option B</th>
+      <th>Option C</th>
+      <th>Option D</th>
+      <th>Answer</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <% @questions.each do |question| %>
+
+      <tr>
+        <td class="question-width"><%= question.question %></td>
+
+        <% question.options.each do |option| %>
+
+          <td><%= option %></td>
+
+        <% end %>
+
+        <td><%= question.options[question.answer] %></td>
+      </tr>
+
+    <% end %>
+
+    </tbody>
+
+  </table>
+
+    <div class="field is-grouped is-grouped-right">
+      <p class="control">
+        <a href="/delete-questions" type="submit" class="button is-danger">Delete all questions</a>
+      </p>
+    </div>
+
+</div>
